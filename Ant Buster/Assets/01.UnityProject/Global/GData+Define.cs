@@ -17,6 +17,8 @@ public static partial class GData
 
     public const string OBJ_NAME_CURRENT_LEVEL = "Level_1";
 
+    public const string TOWER_BOARD = "BoardGround";
+
     public static int gameScore = 0;
 
     public static int life = 3;
@@ -40,3 +42,9 @@ public enum PuzzleType
     PUZZLE_PARALLELOGRAM,
     PUZZLE_SMALL_TRIANGLE,
 }   //PuzzleType()
+
+public enum BoardType 
+{
+    NONE = -1,
+    BOARD_PEACE,
+}
