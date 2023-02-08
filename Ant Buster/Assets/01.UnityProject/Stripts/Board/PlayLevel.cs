@@ -23,7 +23,7 @@ public class PlayLevel : MonoBehaviour
             boardLevelParts.Add(transform.GetChild(i).
                 gameObject.GetComponentMust<BoardLevelPart>());
 
-        }   //loop: ·¹º§ ÇÏÀ§¿¡¼­ ÆÛÁñ ÆÄÃ÷¸¦ ¸ðµÎ Ä³½ÌÇÏ´Â ·çÇÁ
+        }   //loop: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     }
 
@@ -33,7 +33,7 @@ public class PlayLevel : MonoBehaviour
 
     }
 
-    //! ÆÛÁñ Å¸ÀÔÀ» ¹Þ¾Æ¼­ ÇØ´ç Å¸ÀÔ°ú °°Àº Å¸ÀÔÀÇ ÆÛÁñÀ» ¸®ÅÏÇÏ´Â ÇÔ¼ö
+    //! ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½Ø´ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     private List<BoardLevelPart> GetSameTypeBoard(BoardType boardType)
     {
         List<BoardLevelPart> sameTypes = new List<BoardLevelPart>();
@@ -46,12 +46,12 @@ public class PlayLevel : MonoBehaviour
             }
             else { continue; }
 
-        }   //loop: °°Àº Å¸ÀÔÀÇ ÆÛÁñÀ» Ã£¾ÆÁÖ´Â ·çÇÁ
+        }   //loop: ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         return sameTypes;
     }   //GetSameTypePuzzle()
 
-    //! °¡Àå °¡±î¿î ÆÛÁñÀ» Ã£¾ÆÁÖ´Â ÇÔ¼ö
+    //! ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½
     public BoardLevelPart GetCloseSameTypeBoard(BoardType boardType, Vector3 boardWorldPos)
     {
         List<BoardLevelPart> sameTypes = GetSameTypeBoard(boardType);
@@ -72,7 +72,7 @@ public class PlayLevel : MonoBehaviour
                 minDistance = distance;
                 result = boardLvPart;
 
-            }   // if: °¡Àå °¡±î¿î ÆÛÁñÀ» Ä³½ÌÇÑ´Ù. 
+            }   // if: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Ñ´ï¿½. 
             index++;
 
         }   //loop: 
@@ -80,7 +80,7 @@ public class PlayLevel : MonoBehaviour
         if (LEVEL_BOARD_DISTANCE_LIMIT < minDistance)
         {
             result = default;
-        }   //if ³Ê¹« ¸Ö¸® ÀÖ´Â ÆÛÁñÀº »ý·«ÇÑ´Ù.
+        }   //if ï¿½Ê¹ï¿½ ï¿½Ö¸ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 
         return result;
     }   //GetCloseSameTypePuzzle

@@ -12,7 +12,7 @@ public class PlayTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     private Image boardImage = default;
     private PlayLevel playLevel = default;
 
-    private bool isClicked = false; //È®ÀÎ¿ë boolÅ¸ÀÔ ¼±¾ð
+    private bool isClicked = false; //È®ï¿½Î¿ï¿½ boolÅ¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private RectTransform objRect = default;
     private InitBoardScript initBoardZone = default;
 
@@ -25,7 +25,7 @@ public class PlayTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         
         playLevel = GameManager.Instance.gameObjs[GData.TOWER_BOARD].
             GetComponentMust<PlayLevel>();
-        isClicked = false;   //start¿¡¼­ ÇÑ¹ø´õ ÃÊ±âÈ­
+        isClicked = false;   //startï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
         objRect = gameObject.GetRect();
 
@@ -37,7 +37,7 @@ public class PlayTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         boardImage = gameObject.FindChildObj("normalCannon").GetComponentMust<Image>();
 
 
-        //ÆÛÁñ ÀÌ¹ÌÁö ÀÌ¸§¿¡ µû¶ó¼­ ÆÛÁñÀÇ Å¸ÀÔÀÌ Á¤ÇØÁø´Ù.
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
         switch (boardImage.sprite.name)
         {
             case "NormalCannon":
@@ -56,21 +56,21 @@ public class PlayTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
     }
 
-    //! ¸¶¿ì½º ¹öÆ°À» ´­·¶À» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼ö
+    //! ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     public void OnPointerDown(PointerEventData eventData)
     {
         isClicked = true;
 
         //gameObject.SetLocalPos(eventData.position.x, eventData.position.y, 0f); 
-         GFunc.Log($"{gameObject.name}À» ¼±ÅÃÇß´Ù");
+         GFunc.Log($"{gameObject.name}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½");
     }   //OnPointerDown()
 
-    //! ¸¶¿ì½º ¹öÆ°À» ¼ÕÀ» ¶®À» ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼ö
+    //! ï¿½ï¿½ï¿½ì½º ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     public void OnPointerUp(PointerEventData eventData)
     {
         isClicked = false;
-         GFunc.Log($"{gameObject.name}À» ¼±ÅÃ ÇØÁ¦Çß´Ù");
-        //¿©±â¼­ ·¹º§ÀÌ °¡Áö°í ÀÖ´Â ÆÛÁñ ¸®½ºÆ®¸¦ ¼øÈ¸ÇØ¼­ °¡Àå °¡±î¿î ÆÛÁñÀ» Ã£¾Æ¿Â´Ù.
+         GFunc.Log($"{gameObject.name}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½");
+        //ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Æ¿Â´ï¿½.
         BoardLevelPart closeLevelBoard = playLevel.GetCloseSameTypeBoard(boardType, transform.position);
 
 
@@ -78,11 +78,11 @@ public class PlayTower : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         {
             return;
         }
-        GFunc.Log($"{closeLevelBoard.name}ÀÌ °¡Àå °¡±îÀÌ¿¡ ÀÖ½À´Ï´Ù.");
+        GFunc.Log($"{closeLevelBoard.name}ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
         transform.position = closeLevelBoard.transform.position;
     }   //OnPointerUp()
 
-    //! ¸¶¿ì½º¸¦ µå·¡±× ÁßÀÏ ¶§ µ¿ÀÛÇÏ´Â ÇÔ¼ö
+    //! ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 
     public void OnDrag(PointerEventData eventData)
     {
