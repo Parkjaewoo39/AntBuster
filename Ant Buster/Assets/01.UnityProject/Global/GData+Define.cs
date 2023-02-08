@@ -17,7 +17,9 @@ public static partial class GData
 
     public const string OBJ_NAME_CURRENT_LEVEL = "Level_1";
 
-    public const string TOWER_BOARD = "BoardGround";
+    public const string LEVEL_PART_NAME = "BoardObject";
+
+    public const string TOWER_BOARD = "BoardObject";
 
     public static int gameScore = 0;
 

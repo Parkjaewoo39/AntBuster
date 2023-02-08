@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -37,11 +38,13 @@ public class ObjectPooling : MonoBehaviour
 
     public static Bullet GetObject()
     {
-
+        
         if (Instance.poolingObjectQueue.Count > 0)
         {
             var obj = Instance.poolingObjectQueue.Dequeue();
-            obj.transform.SetParent(null);
+            GameObject parent = GFunc.GetRootObj("GameObject");
+            parent.FindChildObj("TowerBulletSpawn");
+            obj.transform.SetParent(parent.transform);
             obj.gameObject.SetActive(true);
             return obj;
         }

@@ -8,7 +8,7 @@ public class PlayLevel : MonoBehaviour
     public List<BoardLevelPart> boardLevelParts = default;
 
 
-    private const float LEVEL_BOARD_DISTANCE_LIMIT = 1f;
+    private const float LEVEL_BOARD_DISTANCE_LIMIT = 10f;
     public void Awake()
     {
         //GameManager.Instance.Create();

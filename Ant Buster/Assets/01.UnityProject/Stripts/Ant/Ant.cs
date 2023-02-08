@@ -5,13 +5,13 @@ using UnityEngine;
 public class Ant : MonoBehaviour
 {
     
-    public static int Hp = default;
+    public static float Hp = default;
     public float moveSpeed = default;
     private Rigidbody2D bulletRigidbody;
-    private Vector3 direction = default;
+    private Vector2 direction = default;
     // Start is called before the first frame update
 
-    public void Shoot(Vector3 direction)
+    public void Shoot(Vector2 direction)
     {
         this.direction = direction;
         transform.LookAt(direction);
@@ -21,6 +21,7 @@ public class Ant : MonoBehaviour
     public void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody2D>();
+        Hp = 2;
     }
 
     public void Hit()
@@ -30,6 +31,7 @@ public class Ant : MonoBehaviour
         {           
            
             Die();
+            Hp += Hp + Mathf.Floor(Hp / 2 ) ;
         }
     }
     public void Die() 
@@ -43,7 +45,7 @@ public class Ant : MonoBehaviour
     }
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame

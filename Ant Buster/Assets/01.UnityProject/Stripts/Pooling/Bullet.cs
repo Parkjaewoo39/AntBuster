@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {    
-    public float bulletSpeed = 12f;
+    public float bulletSpeed = 30f;
     private Rigidbody2D bulletRigid;
     private Vector2 direction = default;
     
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     {
 
         transform.Translate(Vector2.up*Time.deltaTime);
-        Invoke("DestroyBullet", 10f);
+        Invoke("DestroyBullet", 2f);
     }
 
     public void DestroyBullet()
