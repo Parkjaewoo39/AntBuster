@@ -21,16 +21,17 @@ public class TowerMoving : MonoBehaviour
     {
         if (other.tag =="Ant")
         {
-            Vector2 direction = new Vector2
-                (transform.position.x - other.transform.position.x,
-                transform.position.y -other.transform.position.y);
+            GFunc.HeadRotate(gameObject, other.gameObject, 2f);
+            //Vector2 direction = new Vector2
+            //    (transform.position.x - other.transform.position.x,
+            //    transform.position.y -other.transform.position.y);
 
-            float angle = Mathf.Atan2(direction.y, direction.x) *
-                Mathf.Rad2Deg;
-            Quaternion angleAxis = Quaternion.AngleAxis( angle + 90f, Vector3.forward);
-            Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotateSpeed *
-                Time.deltaTime);
-            transform.rotation = rotation;
+            //float angle = Mathf.Atan2(direction.y, direction.x) *
+            //    Mathf.Rad2Deg;
+            //Quaternion angleAxis = Quaternion.AngleAxis( angle + 90f, Vector3.forward);
+            //Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotateSpeed *
+            //    Time.deltaTime);
+            //transform.rotation = rotation;
 
         }
     }

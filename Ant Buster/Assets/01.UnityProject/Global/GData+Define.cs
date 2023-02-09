@@ -21,6 +21,8 @@ public static partial class GData
 
     public const string TOWER_BOARD = "BoardObject";
 
+    public const string ANTBUSTER_PLAY = "01.PlayScene";
+
     public static int gameScore = 0;
 
     public static int life = 3;
@@ -30,12 +32,7 @@ public static partial class GData
 
 public enum PuzzleType 
 {
-    //enumŸ������ �����ϸ�
-    //����Ÿ���� �����ϸ� ���ڶ� 1:1 ��������
-    //-1�� ���ָ� �� Ÿ���� 0�� ��.
-    //-1�� �����ϸ� ���������� ����
-    //������ �Ʒ��� ���� Ÿ���� �þ.
-    //none���� 0���� �������� 1���� �������� �ʱ�ȭ �������� ����� �ִ�?
+   
     NONE = -1,
     PUZZLE_BIG_TRIANGLE,
     PUZZLE_SQUARE,

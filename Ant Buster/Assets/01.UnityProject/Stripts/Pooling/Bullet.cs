@@ -5,8 +5,10 @@ using UnityEngine;
 
 
 public class Bullet : MonoBehaviour
-{    
+{
+    private int bulletDamege = 1;
     public float bulletSpeed = 30f;
+
     private Rigidbody2D bulletRigid;
     private Vector2 direction = default;
     
@@ -31,24 +33,10 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Ant")
         {
             Ant ant = other.GetComponent<Ant>();
-            ant.Hit();
+            ant.Hit(bulletDamege);
+            Debug.Log($"{bulletDamege}");
             Invoke("DestroyBullet", 0f);
         }
 
-    }
-
-    //public void OnTriggerExit2D(Collider2D other)
-    //{
-    //    var bullet = TowerBulletPool.GetObject();
-
-    //    if (other.tag == "TowerRange")
-    //    {
-
-    //        TowerBulletPool.ReturnObject(bullet);
-    //    }
-    //}
-    //void Update()
-    //{
-    //    transform.Translate(direction);
-    //}
+    }   
 }

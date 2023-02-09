@@ -130,18 +130,30 @@ public static partial class GFunc
     }   //Translate()
 
     //! 컴포넌트 가져오는 함수
-    public static T GetComponentMust<T>(this GameObject obj) 
+    public static T GetComponentMust<T>(this GameObject obj,string objName) 
     {
-        T component_ = obj.GetComponent<T>();
+        T component_ = obj.FindChildObj(objName).GetComponent<T>();
                
             //((Component)(component_ as Component)).IsValid();
 
         GFunc.Assert(component_.IsValid<T>() != false , 
             string.Format("{0}에서 {1}을(를) 찾을 수 없습니다.",
             obj.name,component_.GetType().Name));
+        ;
+        return component_;
+    }
+    public static T GetComponentMust<T>(this GameObject obj)
+    {
+        T component_ = obj.GetComponent<T>();
+
+        //((Component)(component_ as Component)).IsValid();
+
+        GFunc.Assert(component_.IsValid<T>() != false,
+            string.Format("{0}에서 {1}을(를) 찾을 수 없습니다.",
+            obj.name, component_.GetType().Name));
         //GFunc.Assert(component_ != default);
         //<T> 무언가를 받겠다 어느 이름이라도 괜찮음. 현업은 한글자  T가 편해서T로 씀
-       // GFunc.Log($"{component_.GetType().Name} is found");
+        // GFunc.Log($"{component_.GetType().Name} is found");
         return component_;
     }
 
@@ -153,6 +165,23 @@ public static partial class GFunc
     }   //Create<T>
 
 
+    //!2D 오브젝트 방향 
+    public static void HeadRotate(this GameObject obj, GameObject targetObj, float rotateSpeed) 
+    {               
+        Vector2 direction = new Vector2
+               (obj.transform.position.x - targetObj.transform.position.x,
+               obj.transform.position.y - targetObj.transform.position.y);
+
+        float angle = Mathf.Atan2(direction.y, direction.x) *
+            Mathf.Rad2Deg;
+
+        Quaternion angleAxis = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+
+        Quaternion rotation = Quaternion.Slerp(obj.transform.rotation, angleAxis, rotateSpeed *
+            Time.deltaTime);
+
+        obj.transform.rotation = rotation;
+    }
     #region
     //public static AudioSource GetAudioSourceMust(this GameObject obj)
     //{
